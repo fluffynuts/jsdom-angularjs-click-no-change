@@ -1,0 +1,22 @@
+{
+  "name": "jsdom-click-change",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "before-regression": "npm install --save-dev jsdom@16.5.0",
+    "postbefore-regression": "npm test",
+    "after-regression": "npm install --save-dev jsdom@16.6.0",
+    "postafter-regression": "npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.8.3",
+    "angular-mocks": "^1.8.3",
+    "jest": "^26.4.2",
+    "jsdom": "^16.5.0"
+  }
+}
