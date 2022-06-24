@@ -51,6 +51,23 @@ describe("clicking a checkbox", () => {
         .toEqual("1");
 
     });
+    it("should raise changed event via click() method", async () => {
+      // Arrange
+      const sut = await easyMount($compile, $rootScope, "<toggle></toggle>");
+
+      // Act
+      const chk = sut.$find("input[type=checkbox]");
+      chk.click();
+
+      // Assert
+      const checkbox = sut.$find("input[type=checkbox]");
+      expect(checkbox.checked)
+        .toBe(true);
+      const span = sut.$find("#changeCount");
+      expect(span.innerHTML.trim())
+        .toEqual("1");
+
+    });
   });
 
   describe(`vanilla DOM`, () => {
